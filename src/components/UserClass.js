@@ -42,7 +42,6 @@ class UserClass extends React.Component {
 
         return (
             <div className='user-card'>
-                <img src={avatar_url}/>
                 <h2>Name: {name}</h2>
                 <h3>Location: {location}</h3>
                 <h4>Contact: @nitin_003</h4>
@@ -52,7 +51,6 @@ class UserClass extends React.Component {
 }
 
 export default UserClass
-
 
 
 

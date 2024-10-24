@@ -12,8 +12,8 @@ const User = ({name}) => {
                 Count Increase
             </button>
             <h2>Name: {name}</h2>
-            <h3>Location: Dehradun</h3>
-            <h4>Contact: @akshaymarch7</h4>
+            <h3>Location: Uttar Pradesh</h3>
+            <h4>Contact: @nitinpathak</h4>
         </div>
     );
 }
