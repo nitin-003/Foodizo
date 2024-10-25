@@ -40,16 +40,17 @@ const Body = () => {
     <div className="body">
       <div className="filter flex">
         {/* Search Input */}
-        <div className="search m-4 p-4">
+        <div className="search m-4 p-4 mx-8">
           <input
             type="text"
             placeholder="Search Restaurants"
-            className="searchBox border border-solid border-black"
+            className="searchBox border border-solid rounded-full p-2 mx-5 w-[25rem]"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            // className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            className="bg-gradient-to-l from-teal-700 to-teal-400 w-[6rem] hover:text-red-600 text-white font-bold px-4 py-2 m-2 rounded-3xl"
             onClick={() => {
               const filtered = listOfRestaurants.filter((res) =>
                 res?.info?.name?.toLowerCase().includes(searchText.toLowerCase())
@@ -62,12 +63,13 @@ const Body = () => {
         </div>
 
         {/* Top Rated Filter */}
-        <div className="search m-4 p-4 flex items-center">
+        <div className="search m-4 p-4 flex items-center mx-100">
           <button
-            className="px-4 py-2 bg-gray-100 m-4 rounded-lg"
+            // className="px-4 py-2 bg-gray-100 m-4 rounded-lg"
+            className="bg-gradient-to-l from-teal-700 to-teal-400 w-[16rem] hover:text-black text-white font-bold p-2 rounded-3xl"
             onClick={() => {
               const filtered = listOfRestaurants.filter(
-                (res) => parseFloat(res?.info?.avgRating) > 4
+                (res) => parseFloat(res?.info?.avgRating) > 4.3
               );
               setFilteredRestaurant(filtered);
             }}
@@ -78,7 +80,7 @@ const Body = () => {
       </div>
 
       {/* Restaurant List */}
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mx-12 shadow-lg justify-evenly">
         {filteredRestaurant.map((restaurant) => (
           <Link
             style={{ textDecoration: 'none', color: '#000' }}

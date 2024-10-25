@@ -2,6 +2,8 @@ import React from 'react';
 import { CDN_URL } from '../utils/constants';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../utils/cartSlice';
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemList = ({items}) => {
 
@@ -10,10 +12,12 @@ const ItemList = ({items}) => {
     const handleAddItem = (item) => {
         // Dispatch an action
         dispatch(addItem(item));
+        toast.success("Item added to cart!")
     }
 
   return (
     <div>
+        <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick pauseOnFocusLoss draggable pauseOnHover />
         {
             items.map((item) => (
                 <div key={item.card.info.id} className='p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between'>
@@ -27,7 +31,8 @@ const ItemList = ({items}) => {
                     <div className='w-2/12 p-4'>
                         <div className='absolute'>
                             <button 
-                                className='p-2 mx-16 rounded-lg bg-black text-white shadow-lg' 
+                                className='p-2 mx-16 rounded-lg bg-black text-xs text-white shadow-lg hover:bg-red-400' 
+                                // className="hover:bg-green-600 bg-slate-700 text-xs text-white font-bold w-12 h-5 mt-7 shadow-md border-2"
                                 onClick={() => handleAddItem(item)}
                             >
                                 Add

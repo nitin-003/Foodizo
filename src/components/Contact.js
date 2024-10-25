@@ -27,7 +27,7 @@ const Contact = () => {
               <input type= "text" placeholder="Enter a message" className= "  text-sm  font-serif  p-1 w-[28rem] h-20  border border-gray-400 shadow-sm" />
             </div>
 
-            <div className="text-center"><button className="mx-auto  bg-green-700 hover:bg-slate-700 text-sm text-white font-bold w-24 h-10 mt-7 shadow-md border-2 " >Submit</button></div>
+            <div className="text-center"><button className="mx-auto  bg-green-700 hover:bg-red-600 text-sm text-white font-bold w-24 h-10 mt-7 shadow-md border-2 " >Submit</button></div>
           </form>
         </div>
       </div>
