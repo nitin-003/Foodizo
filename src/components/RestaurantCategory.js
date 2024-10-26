@@ -14,10 +14,10 @@ const RestaurantCategory = ({data, showItems, setShowIndex}) => {
   const handleClick = () => {
     if(selfExpand){
       setSelfExpand(false);
-      setShowIndex(null); // Close the accordion when clicked again
+      setShowIndex(null);
     } 
     else{
-      setShowIndex(); // Handle the first functionality
+      setShowIndex();
       setSelfExpand(true);
     }
   };

@@ -12,10 +12,8 @@ const RestaurantMenu = () => {
 
     const [showIndex, setShowIndex] = useState(null);
 
-    // Show shimmer loading if resInfo is not yet loaded
     if (resInfo == null) return <Shimmer/>;
 
-    // Use optional chaining and provide fallback values where necessary
     const { name, cuisines = [], costForTwoMessage } = resInfo?.cards?.[2]?.card?.card?.info || {};
     const itemCards = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards || [];
 
@@ -32,7 +30,6 @@ const RestaurantMenu = () => {
             
             {/* categories accordians*/}
             {categories.map((category, index) => (
-                // Controlled Component
                 <RestaurantCategory 
                     key={category?.card?.card.title} 
                     data={category?.card?.card}
@@ -46,7 +43,6 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
-
 
 
 

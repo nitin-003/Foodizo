@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
-// import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -22,7 +21,6 @@ const Body = () => {
       );
       const json = await data.json();
 
-      // Ensure the path to restaurants data exists
       const restaurants = json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
       setListOfRestaurants(restaurants);
       setFilteredRestaurant(restaurants);
@@ -33,7 +31,6 @@ const Body = () => {
     }
   };
 
-  // Ensure listOfRestaurants is always an array before accessing length
   return (listOfRestaurants?.length ?? 0) === 0 ? (
     <Shimmer />
   ) : (
@@ -49,8 +46,7 @@ const Body = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            // className="px-4 py-2 bg-green-100 m-4 rounded-lg"
-            className="bg-gradient-to-l from-teal-700 to-teal-400 w-[6rem] hover:text-red-600 text-white font-bold px-4 py-2 m-2 rounded-3xl"
+            className="bg-gradient-to-l from-teal-700 to-teal-400 w-[6rem] hover:text-black text-white font-bold px-4 py-2 m-2 rounded-3xl"
             onClick={() => {
               const filtered = listOfRestaurants.filter((res) =>
                 res?.info?.name?.toLowerCase().includes(searchText.toLowerCase())
@@ -65,7 +61,6 @@ const Body = () => {
         {/* Top Rated Filter */}
         <div className="search m-4 p-4 flex items-center mx-100">
           <button
-            // className="px-4 py-2 bg-gray-100 m-4 rounded-lg"
             className="bg-gradient-to-l from-teal-700 to-teal-400 w-[16rem] hover:text-black text-white font-bold p-2 rounded-3xl"
             onClick={() => {
               const filtered = listOfRestaurants.filter(
@@ -96,6 +91,7 @@ const Body = () => {
 };
 
 export default Body;
+
 
 
 

@@ -10,7 +10,6 @@ const ItemList = ({items}) => {
     const dispatch = useDispatch();
 
     const handleAddItem = (item) => {
-        // Dispatch an action
         dispatch(addItem(item));
         toast.success("Item added to cart!")
     }
@@ -32,7 +31,6 @@ const ItemList = ({items}) => {
                         <div className='absolute'>
                             <button 
                                 className='p-2 mx-16 rounded-lg bg-black text-xs text-white shadow-lg hover:bg-red-400' 
-                                // className="hover:bg-green-600 bg-slate-700 text-xs text-white font-bold w-12 h-5 mt-7 shadow-md border-2"
                                 onClick={() => handleAddItem(item)}
                             >
                                 Add

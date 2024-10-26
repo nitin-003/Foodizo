@@ -2,14 +2,11 @@ import React from 'react'
 import { LOGO_URL } from '../utils/constants';
 import { useState} from 'react';
 import {Link} from "react-router-dom";
-// import UserContext from '../utils/UserContext';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
-  // const {loggedInUser} = useContext(UserContext);
 
-  // Subscribing to the store by using Selector
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
@@ -24,16 +21,16 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className='flex p-4 m-4'>
-          <li className='px-4'>
+          <li className='p-2 text-small m-2 font-serif hover:bg-teal-700 hover:text-white cursor-pointer rounded'>
             <Link to="/">Home</Link>
           </li>
-          <li className='px-4'>
+          <li className='p-2 text-small m-2 font-serif hover:bg-teal-700 hover:text-white cursor-pointer rounded'>
             <Link to="/about">About Us</Link>
           </li>
-          <li className='px-4'>
+          <li className='p-2 text-small m-2 font-serif hover:bg-teal-700 hover:text-white cursor-pointer rounded'>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className='px-4 flex'>
+          <li className='flex p-2 text-small m-2 font-serif hover:bg-teal-700 hover:text-white cursor-pointer rounded'>
             <Link to="/cart">
               <div className='px-4 flex'>
                 <img src="https://static-00.iconduck.com/assets.00/cart-icon-2008x2048-3u2x72lr.png" alt="cart" className='w-5 flex'/>
@@ -41,7 +38,7 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li className='px-4 flex'>
+          <li className='flex p-2 text-small m-2 font-serif hover:bg-teal-700 hover:text-white cursor-pointer rounded'>
             <button className="login" 
               onClick={() => {btnNameReact === "Login" 
                 ? setBtnNameReact("Logout") 
@@ -49,7 +46,6 @@ const Header = () => {
             >
               {btnNameReact}
             </button>
-            {/* <li className='px-4 font-bold'>{loggedInUser}</li> */}
           </li>       
         </ul>
       </div>
@@ -59,7 +55,6 @@ const Header = () => {
 
   
 export default Header
-
 
 
 
