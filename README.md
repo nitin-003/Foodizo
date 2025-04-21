@@ -18,7 +18,7 @@ Foodizo is a Swiggy-inspired food ordering app built with React.js. It features 
 * Redux Toolkit
 
 # Attachments
-
+![First Landing Page](https://github.com/user-attachments/assets/73caca08-4582-477b-b814-7bc0a6458d83)
 
 
 
